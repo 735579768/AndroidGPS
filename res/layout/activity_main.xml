@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+<Button 
+    android:id="@+id/dingwei_btn"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="公司地址"
+    android:padding="10dp"/>
+<Button 
+    android:id="@+id/autodingwei_btn"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="自动定位"
+    android:padding="10dp"/>
+<com.baidu.mapapi.map.MapView  
+    android:id="@+id/bmapView"  
+    android:layout_width="fill_parent"  
+    android:layout_height="0dp"
+    android:layout_weight="1"  
+    android:clickable="true" />
+</LinearLayout>
