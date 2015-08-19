@@ -32,7 +32,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-		private Marker lastMarker;
+		private Marker lastMarker=null;
+		private LatLng lastPoint=new LatLng(0,0);
 		private MapView mMapView = null; 
 		private BaiduMap mBaiduMap;
 		private Button dingwei_btn,autodingwei_btn;
@@ -122,9 +123,11 @@ public class MainActivity extends Activity {
         mMapView.onPause();  
         }  
     private void addMaker(LatLng point){
-    	if(lastMarker!=null){
+    	if(lastPoint.latitude==point.latitude && lastPoint.longitude==point.longitude)return;
+    	if(lastMarker!=null ){
     		lastMarker.remove();
     	}
+    	lastPoint=point;
     	//定义Maker坐标点  
     	//LatLng point = new LatLng(34.816984,113.666113);  
     	//构建Marker图标  
